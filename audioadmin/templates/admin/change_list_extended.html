@@ -1,0 +1,15 @@
+{% extends "admin/change_list.html" %}
+{% block extrahead %}
+{{ block.super }}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static "audioadmin/css/bar-ui.css" %}" />
+<link rel="stylesheet" type="text/css" href="{% static "audioadmin/flashblock/flashblock.css" %}" />
+<script type="text/javascript" src="{% static "audioadmin/script/soundmanager2.js" %}"></script>
+<script>
+
+soundManager.url = "{% static "audioadmin/swf/"%}";
+
+</script>
+<script type="text/javascript" src="{% static "audioadmin/script/bar-ui.js" %}"></script>
+
+{% endblock %}

@@ -1,0 +1,4 @@
+Django==1.7.1
+Pillow==2.6.1
+django-imagekit==3.2.4
+mutagen==1.22

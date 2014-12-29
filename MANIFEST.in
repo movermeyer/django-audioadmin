@@ -1,0 +1,6 @@
+global-exclude *.pyc
+
+include README.rst
+include requirements.txt
+
+recursive-include audioadmin *
