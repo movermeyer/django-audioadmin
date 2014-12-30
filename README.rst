@@ -2,6 +2,14 @@
 django-audioadmin
 =================
 
+.. image:: https://pypip.in/v/django-audioadmin/badge.png
+    :target: https://pypi.python.org/pypi/django-audioadmin/
+    :alt: Latest PyPI version
+
+.. image:: https://pypip.in/d/django-audioadmin/badge.png
+    :target: https://pypi.python.org/pypi/django-audioadmin/
+    :alt: Number of PyPI downloads
+
 A reusable Django app for uploading/previewing audio files with a simple id3 tag reader.
 
 
