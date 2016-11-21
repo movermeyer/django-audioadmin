@@ -9,8 +9,8 @@ from django.db.models.signals import post_save
 
 from mutagen.easyid3 import EasyID3
 
-from imagekit.models import ImageSpecField
-from imagekit.processors import ResizeToFill
+# from imagekit.models import ImageSpecField
+# from imagekit.processors import ResizeToFill
 
 from validators import MimetypeValidator
 
@@ -47,11 +47,11 @@ class AudioFile(models.Model):
         _("Artist"), max_length=200, null=True, blank=True)
     album = models.CharField(
         _("Album"), max_length=200, null=True, blank=True)
-    artwork = models.ImageField(
-        upload_to=get_artwork_upload_path, null=True, blank=True)
-    artwork_thumb = ImageSpecField(
-        source='artwork', processors=[
-            ResizeToFill(150, 150)], format='JPEG', options={'quality': 90})
+    # artwork = models.ImageField(
+    #     upload_to=get_artwork_upload_path, null=True, blank=True)
+    # artwork_thumb = ImageSpecField(
+    #     source='artwork', processors=[
+    #         ResizeToFill(150, 150)], format='JPEG', options={'quality': 90})
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -78,10 +78,10 @@ class AudioFile(models.Model):
     audio_preview.allow_tags = True
 
     def thumbnail(self):
-        if self.artwork:
-            return '<img src="%s"/>' % self.artwork_thumb.url
-        else:
-            return '<img src="http://placehold.it/150x150"/>'
+        # if self.artwork:
+        #     return '<img src="%s"/>' % self.artwork_thumb.url
+        # else:
+        return '<img src="http://placehold.it/150x150"/>'
 
     thumbnail.allow_tags = True
 
