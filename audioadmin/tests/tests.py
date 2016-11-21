@@ -6,13 +6,14 @@ from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import SimpleUploadedFile
 from audioadmin.models import AudioFile
 
+
 class AudioFileModel(TestCase):
 
     def setUp(self):
         User.objects.create(username="admin")
-        
 
     def test_valid__mimetype_upload(self):
+        """Test valid mimetype upload."""
         user = User.objects.get(username='admin')
         upload_file = open(os.path.dirname(__file__) + '/data/test.mp3', 'rb')
         audiofile = AudioFile(
@@ -20,13 +21,11 @@ class AudioFileModel(TestCase):
             file=SimpleUploadedFile(upload_file.name, upload_file.read()),
             user=user
         )
-        
         audiofile.save()
         audiofile.full_clean()
 
-
-
     def test_invalid_mimetype_upload(self):
+        """Test invalid mimetype upload."""
         user = User.objects.get(username='admin')
         upload_file = open(os.path.dirname(__file__) + '/data/test.txt', 'rb')
         audiofile = AudioFile(
@@ -35,8 +34,6 @@ class AudioFileModel(TestCase):
             user=user
         )
 
-        with self.assertRaises(ValidationError): 
+        with self.assertRaises(ValidationError):
             audiofile.save()
             audiofile.full_clean()
-
-   
