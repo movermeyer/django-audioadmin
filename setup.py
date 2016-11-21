@@ -2,8 +2,6 @@
 from setuptools import setup, find_packages
 import audioadmin
 
-
-
 setup(
     name='django-audioadmin',
     version=audioadmin.__version__,
