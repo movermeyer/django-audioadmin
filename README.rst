@@ -2,11 +2,11 @@
 django-audioadmin
 =================
 
-.. image:: https://pypip.in/v/django-audioadmin/badge.png
+.. image:: https://img.shields.io/pypi/v/django-audioadmin.svg
     :target: https://pypi.python.org/pypi/django-audioadmin/
     :alt: Latest PyPI version
 
-.. image:: https://pypip.in/d/django-audioadmin/badge.png
+.. image:: https://img.shields.io/pypi/dm/django-audioadmin.svg
     :target: https://pypi.python.org/pypi/django-audioadmin/
     :alt: Number of PyPI downloads
 
